@@ -262,8 +262,11 @@
   @media(max-width:760px){
     header.nav{padding:10px 0}
     header.nav.scrolled{padding:8px 0}
-    .brand .logo{height:40px}
-    .brand small{display:none}
+    .brand .logo{height:38px}
+    .brand{font-size:1.02rem;max-width:56vw;overflow:hidden}
+    .brand span{overflow:hidden;text-overflow:ellipsis}
+    .lang button{padding:5px 10px}
+    .nav-inner{gap:10px}
     .intro .grid>div,.about .grid>div{text-align:center}
     .intro .badge{text-align:left}
     .ben-card{text-align:center}
@@ -278,7 +281,6 @@
     .tr-cta dl{display:inline-grid;text-align:left}
     .tr-panel h4{text-align:center}
     .contact .section-head{text-align:center}
-    .info-item{justify-content:center}
     .foot-grid{justify-content:center;text-align:center}
     .foot-bottom{justify-content:center;text-align:center}
   }
@@ -690,6 +692,11 @@ window.addEventListener('scroll',function(){
 var burger=document.getElementById('burger'), menu=document.getElementById('menu');
 burger.addEventListener('click',function(){ menu.classList.toggle('open'); burger.classList.toggle('open'); nav.classList.remove('nav-hidden'); });
 menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ menu.classList.remove('open'); burger.classList.remove('open'); }); });
+document.addEventListener('click',function(e){
+  if(menu.classList.contains('open') && !menu.contains(e.target) && !burger.contains(e.target)){
+    menu.classList.remove('open'); burger.classList.remove('open');
+  }
+});
 
 var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
