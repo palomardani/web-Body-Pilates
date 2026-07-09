@@ -38,12 +38,13 @@
   .btn-outline{background:transparent;color:var(--green-700);border-color:rgba(31,74,46,.4)}
   .btn-outline:hover{background:rgba(31,74,46,.06)}
 
-  header.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:transform .35s ease,background .35s ease,padding .35s ease,box-shadow .35s ease;padding:16px 0;background:rgba(246,244,236,.95);backdrop-filter:blur(10px);box-shadow:0 6px 24px -20px rgba(0,0,0,.45)}
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:transform .35s ease,background .35s ease,padding .35s ease,box-shadow .35s ease;padding:16px 0;background:#f6f4ec;box-shadow:0 6px 24px -20px rgba(0,0,0,.45)}
   header.nav.scrolled{padding:11px 0;box-shadow:0 6px 24px -16px rgba(0,0,0,.5)}
   header.nav.nav-hidden{transform:translateY(-100%)}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
   .brand{display:flex;align-items:center;gap:12px;font-family:'Fraunces',serif;font-weight:600;font-size:1.25rem;letter-spacing:.02em;color:var(--navy)}
   .brand .logo{height:44px;width:auto;flex:none}
+  .brand span{white-space:nowrap}
   .brand small{display:block;font-family:'Jost';font-weight:400;font-size:.6rem;letter-spacing:.34em;text-transform:uppercase;opacity:.7;margin-top:2px;color:var(--green-600)}
   nav.links{display:flex;align-items:center;gap:26px}
   nav.links a{font-size:.9rem;color:var(--ink);font-weight:400;position:relative;letter-spacing:.02em}
@@ -57,7 +58,7 @@
   .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
   .burger span{width:26px;height:2px;background:var(--green-700);transition:.3s}
 
-  .hero{position:relative;min-height:100vh;display:flex;align-items:center;background:linear-gradient(180deg,rgba(21,58,36,.6),rgba(21,58,36,.4) 40%,rgba(21,58,36,.82)),url('img/studio-1.avif') center/cover no-repeat;color:#fff;text-align:center;padding:120px 0 80px}
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;background:linear-gradient(180deg,rgba(21,58,36,.6),rgba(21,58,36,.4) 40%,rgba(21,58,36,.82)),url('img/hero.jpg') center/cover no-repeat;color:#fff;text-align:center;padding:120px 0 80px}
   .hero .inner{max-width:820px;margin:0 auto}
   .hero .eyebrow{color:#d6ecc4}
   .hero h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:500;margin-bottom:22px;text-shadow:0 2px 30px rgba(0,0,0,.35)}
@@ -68,6 +69,7 @@
   @keyframes cue{0%{opacity:0;transform:scaleY(.3)}50%{opacity:1}100%{opacity:0;transform:scaleY(1)}}
 
   section{padding:100px 0}
+  section[id]{scroll-margin-top:84px}
   .section-head{max-width:720px;margin:0 auto 60px;text-align:center}
   .section-head h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:18px;color:var(--green-800)}
   .section-head p{color:var(--muted);font-size:1.05rem}
@@ -261,6 +263,7 @@
     header.nav{padding:10px 0}
     header.nav.scrolled{padding:8px 0}
     .brand .logo{height:40px}
+    .brand small{display:none}
     .intro .grid>div,.about .grid>div{text-align:center}
     .intro .badge{text-align:left}
     .ben-card{text-align:center}
@@ -294,7 +297,7 @@
       <a href="#about" data-i18n="nav_about">Qui som</a>
       <a href="#services" data-i18n="nav_services">Serveis</a>
       <a href="#training" data-i18n="nav_training">Formacions</a>
-      <a href="#reviews" data-i18n="nav_center">Centre</a>
+      <a href="#reviews" data-i18n="nav_center">Estudi de Pilates</a>
       <a href="#contact" data-i18n="nav_contact">Contacte</a>
     </nav>
     <div class="nav-right">
@@ -324,7 +327,7 @@
 <section class="intro" id="intro">
   <div class="wrap grid">
     <figure class="reveal">
-      <img src="img/reformer.avif" alt="Reformer al centre Body Pilates" />
+      <img src="img/individual.jpg" alt="Reformer al centre Body Pilates" />
       <div class="badge">
         <span class="bic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
         <div>
@@ -367,12 +370,12 @@
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow" style="color:var(--lime)" data-i18n="svc_eyebrow">Els nostres serveis</span>
-      <h2 data-i18n="svc_title">Troba la manera de practicar que et va millor</h2>
+      <h2 data-i18n="svc_title">Tria com vols entrenar</h2>
       <p data-i18n="svc_sub">Sessions dissenyades per adaptar-se als teus objectius i al teu ritme.</p>
     </div>
     <div class="svc-grid">
       <div class="svc-card reveal">
-        <div class="ph"><img src="img/reformer.avif" alt="Sessió individual"></div>
+        <div class="ph"><img src="img/individual.jpg" alt="Sessió individual"></div>
         <div class="body">
           <h3 data-i18n="svc1_t">Sessions individuals</h3>
           <p data-i18n="svc1_p">Una experiència 100% personalitzada. La instructora dissenya un pla a mida per als teus objectius: força, flexibilitat, gestió del dolor o postura, amb horaris flexibles.</p>
@@ -380,7 +383,7 @@
         </div>
       </div>
       <div class="svc-card reveal">
-        <div class="ph"><img src="img/studio-1.avif" alt="Sessió grupal"></div>
+        <div class="ph"><img src="img/grups.jpg" alt="Sessió grupal"></div>
         <div class="body">
           <h3 data-i18n="svc2_t">Sessions grupals</h3>
           <p data-i18n="svc2_p">Una experiència divertida i motivadora en comunitat. Classes dinàmiques de força, flexibilitat i equilibri, per a tots els nivells, en un espai inclusiu i acollidor.</p>
@@ -420,7 +423,7 @@
       <p data-i18n="tr_sub">Un programa integral per formar instructors amb una base sòlida en els principis clàssics del mètode Pilates.</p>
     </div>
     <div class="tr-top reveal">
-      <figure><img src="img/studio-1.avif" alt="Estudi de formació Body Pilates a Olot"></figure>
+      <figure><img src="img/grups.jpg" alt="Estudi de formació Body Pilates a Olot"></figure>
       <div>
         <h3 data-i18n="tr_h1">Aprèn el mètode al cor de La Garrotxa</h3>
         <p data-i18n="tr_p1">El curs combina teoria, pràctica i ensenyament aplicat, i et dona les eines per guiar classes segures, efectives i alineades amb els fonaments originals del mètode.</p>
@@ -466,10 +469,10 @@
       <h2 data-i18n="val_title">La nostra manera d'acompanyar-te</h2>
     </div>
     <div class="val-grid">
-      <div class="val-card reveal"><div class="vic"><svg viewBox="0 0 24 24"><path d="M12 21C7 17 4 13 4 9a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 4-3 8-8 12Z"/></svg></div><h3 data-i18n="val1_t">La nostra motivació</h3><p data-i18n="val1_p">Volem formar part del teu viatge cap a una vida més saludable i plena. A cada classe et donem el suport, la inspiració i les eines per assolir els teus objectius de benestar.</p></div>
-      <div class="val-card reveal"><div class="vic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg></div><h3 data-i18n="val2_t">La nostra missió</h3><p data-i18n="val2_p">Inspirar-te i capacitar-te per descobrir la millor versió de tu mateixa a través del Pilates, en un espai on créixer i connectar amb el teu cos.</p></div>
-      <div class="val-card reveal"><div class="vic"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg></div><h3 data-i18n="val3_t">El nostre projecte</h3><p data-i18n="val3_p">Fomentar la salut i el benestar a través del Pilates, amb classes dinàmiques, suport personalitzat i una comunitat acollidora.</p></div>
-      <div class="val-card reveal"><div class="vic"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 15.8 7 18l1-5.5-4-3.9L9.5 8Z"/></svg></div><h3 data-i18n="val4_t">Els nostres valors</h3><p data-i18n="val4_p">Salut integral, empatia i compromís amb la teva transformació personal, amb un enfocament holístic i una atenció dedicada.</p></div>
+      <div class="val-card reveal"><div class="vic"><svg viewBox="0 0 24 24"><path d="M12 21C7 17 4 13 4 9a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 4-3 8-8 12Z"/></svg></div><h3 data-i18n="val1_t">La nostra motivació</h3><p data-i18n="val1_p">Volem acompanyar-te en el teu camí cap a una vida més sana i plena. A cada classe hi posem cura, energia i les eines perquè et sentis forta i millor amb tu mateixa.</p></div>
+      <div class="val-card reveal"><div class="vic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg></div><h3 data-i18n="val2_t">La nostra missió</h3><p data-i18n="val2_p">Ajudar-te a descobrir la millor versió de tu a través del Pilates, en un espai proper on créixer, connectar amb el teu cos i guanyar confiança.</p></div>
+      <div class="val-card reveal"><div class="vic"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg></div><h3 data-i18n="val3_t">El nostre projecte</h3><p data-i18n="val3_p">Un centre petit i acollidor on el Pilates es viu de prop: grups reduïts, atenció personalitzada i una comunitat que cuida.</p></div>
+      <div class="val-card reveal"><div class="vic"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 15.8 7 18l1-5.5-4-3.9L9.5 8Z"/></svg></div><h3 data-i18n="val4_t">Els nostres valors</h3><p data-i18n="val4_p">Salut, empatia i compromís de veritat amb tu. Un tracte humà i proper, i un acompanyament honest a cada pas.</p></div>
     </div>
   </div>
 </section>
@@ -585,7 +588,7 @@
 var I18N = {
   es:{
     meta_desc:"Conecta el cuerpo, la respiración y la mente. Centro de Pilates en Olot con sesiones individuales y grupales y formación de instructores.",
-    nav_home:"Inicio",nav_about:"Quiénes somos",nav_services:"Servicios",nav_training:"Formaciones",nav_center:"Centro",nav_contact:"Contacto",nav_cta:"Reserva",
+    nav_home:"Inicio",nav_about:"Quiénes somos",nav_services:"Servicios",nav_training:"Formaciones",nav_center:"Estudio de Pilates",nav_contact:"Contacto",nav_cta:"Reserva",
     hero_eyebrow:"Centro de Pilates · Olot",
     hero_title:"Conecta el cuerpo,<br>la respiración y la mente",
     hero_lead:"Una experiencia completa y transformadora para mejorar tu salud física y mental, adaptada a ti.",
@@ -606,7 +609,7 @@ var I18N = {
     ben6_t:"Coordinación",ben6_p:"Movimientos que trabajan distintos grupos musculares a la vez.",
     ben7_t:"Previene lesiones",ben7_p:"Refuerza la musculatura alrededor de las articulaciones.",
     ben8_t:"Concentración",ben8_p:"Atención plena y claridad mental en cada ejercicio.",
-    svc_eyebrow:"Nuestros servicios",svc_title:"Encuentra la forma de practicar que mejor te va",
+    svc_eyebrow:"Nuestros servicios",svc_title:"Elige cómo quieres entrenar",
     svc_sub:"Sesiones diseñadas para adaptarse a tus objetivos y a tu ritmo.",
     svc1_t:"Sesiones individuales",svc1_p:"Una experiencia 100% personalizada. La instructora diseña un plan a medida para tus objetivos: fuerza, flexibilidad, gestión del dolor o postura, con horarios flexibles.",
     svc2_t:"Sesiones grupales",svc2_p:"Una experiencia divertida y motivadora en comunidad. Clases dinámicas de fuerza, flexibilidad y equilibrio, para todos los niveles, en un espacio inclusivo y acogedor.",
@@ -638,10 +641,10 @@ var I18N = {
     tr_d4:"Incluye",tr_d4v:"Manual, prácticas, examen y certificado",
     tr_cta_btn:"Infórmate e inscríbete",
     val_eyebrow:"Qué nos diferencia",val_title:"Nuestra manera de acompañarte",
-    val1_t:"Nuestra motivación",val1_p:"Queremos formar parte de tu viaje hacia una vida más saludable y plena. En cada clase te damos el apoyo, la inspiración y las herramientas para alcanzar tus objetivos de bienestar.",
-    val2_t:"Nuestra misión",val2_p:"Inspirarte y capacitarte para descubrir la mejor versión de ti misma a través del Pilates, en un espacio donde crecer y conectar con tu cuerpo.",
-    val3_t:"Nuestro proyecto",val3_p:"Fomentar la salud y el bienestar a través del Pilates, con clases dinámicas, apoyo personalizado y una comunidad acogedora.",
-    val4_t:"Nuestros valores",val4_p:"Salud integral, empatía y compromiso con tu transformación personal, con un enfoque holístico y una atención dedicada.",
+    val1_t:"Nuestra motivación",val1_p:"Queremos acompañarte en tu camino hacia una vida más sana y plena. En cada clase ponemos cuidado, energía y las herramientas para que te sientas fuerte y mejor contigo misma.",
+    val2_t:"Nuestra misión",val2_p:"Ayudarte a descubrir la mejor versión de ti a través del Pilates, en un espacio cercano donde crecer, conectar con tu cuerpo y ganar confianza.",
+    val3_t:"Nuestro proyecto",val3_p:"Un centro pequeño y acogedor donde el Pilates se vive de cerca: grupos reducidos, atención personalizada y una comunidad que cuida.",
+    val4_t:"Nuestros valores",val4_p:"Salud, empatía y compromiso de verdad contigo. Un trato humano y cercano, y un acompañamiento honesto en cada paso.",
     rev_eyebrow:"El centro",rev_title:"Lo que dicen nuestras alumnas",
     rev_sub:"Gran experiencia en el sector y formación especializada en el método Pilates.",
     rev_google:"Reseñas de Google",
@@ -702,6 +705,10 @@ document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
   M&&M.addEventListener('click',loadMap);
 })();
 
+document.querySelectorAll('.info-item').forEach(function(it){
+  var link=it.querySelector('a[href]');
+  if(link){ it.style.cursor='pointer'; it.addEventListener('click',function(e){ if(e.target.closest('a')) return; if(link.target==='_blank'){ window.open(link.href,'_blank'); } else { window.location.href=link.getAttribute('href'); } }); }
+});
 (function(){
   var track=document.getElementById('revTrack');
   var slides=track?track.children.length:0;
