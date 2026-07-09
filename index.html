@@ -45,7 +45,7 @@
   .brand{display:flex;align-items:center;gap:12px;font-family:'Fraunces',serif;font-weight:600;font-size:1.25rem;letter-spacing:.02em;color:var(--navy)}
   .brand .logo{height:44px;width:auto;flex:none}
   .brand span{white-space:nowrap}
-  .brand small{display:block;font-family:'Jost';font-weight:400;font-size:.6rem;letter-spacing:.34em;text-transform:uppercase;opacity:.7;margin-top:2px;color:var(--green-600)}
+  .brand small{display:block;font-family:'Jost';font-weight:400;font-size:.6rem;letter-spacing:.34em;text-transform:uppercase;opacity:.7;margin-top:2px;color:var(--green-600);text-align:center}
   nav.links{display:flex;align-items:center;gap:26px}
   nav.links a{font-size:.9rem;color:var(--ink);font-weight:400;position:relative;letter-spacing:.02em}
   nav.links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--lime);transition:.25s}
@@ -212,6 +212,10 @@
   .foot-social a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;transition:.25s}
   .foot-social a:hover{background:var(--lime);border-color:var(--lime)}
   .foot-social svg{width:18px;height:18px;fill:#fff}
+  .foot-social a.call{background:var(--lime);border-color:var(--lime)}
+  .foot-social a.call svg{fill:var(--green-900)}
+  .foot-social a.call:hover{background:var(--green-900);border-color:var(--green-900)}
+  .foot-social a.call:hover svg{fill:#fff}
   .foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:22px;font-size:.82rem}
   .foot-bottom a:hover{color:var(--lime)}
 
@@ -282,7 +286,7 @@
     .tr-panel h4{text-align:center}
     .contact .section-head{text-align:center}
     .foot-grid{justify-content:center;text-align:center}
-    .foot-bottom{justify-content:center;text-align:center}
+    .foot-bottom{flex-direction:column;justify-content:center;text-align:center;gap:8px;font-size:.78rem}
   }
 </style>
 </head>
@@ -315,7 +319,7 @@
 
 <section class="hero" id="hero">
   <div class="wrap inner">
-    <span class="eyebrow" data-i18n="hero_eyebrow">Centre de Pilates · Olot</span>
+    <span class="eyebrow" data-i18n="hero_eyebrow">Estudi de Pilates · Olot</span>
     <h1 data-i18n="hero_title">Connecta el cos,<br>la respiració i la ment</h1>
     <p class="lead" data-i18n="hero_lead">Una experiència completa i transformadora per millorar la teva salut física i mental, adaptada a tu.</p>
     <div class="cta-row">
@@ -339,8 +343,8 @@
       </div>
     </figure>
     <div class="reveal">
-      <span class="eyebrow" data-i18n="intro_eyebrow">Benvinguda a Body Pilates</span>
-      <h2 data-i18n="intro_title">Un espai on créixer, connectar i sentir-te fort</h2>
+      <span class="eyebrow" data-i18n="intro_eyebrow">Et donem la benvinguda</span>
+      <h2 data-i18n="intro_title">Un espai on créixer, connectar i sentir-te bé</h2>
       <p data-i18n="intro_p1">A Body Pilates ens dediquem a oferir-te una experiència completa i transformadora per millorar la teva salut física i mental. Els nostres serveis s'adapten a les necessitats de cada persona, des de principiants fins a practicants avançats.</p>
       <p data-i18n="intro_p2">Creiem fermament en el poder del Pilates per transformar el cos i la ment. A cada classe et donem el suport, la inspiració i les eines que necessites per assolir els teus objectius de benestar.</p>
       <a href="#about" class="btn btn-dark" data-i18n="intro_cta">Coneix la nostra història</a>
@@ -471,7 +475,7 @@
       <h2 data-i18n="val_title">La nostra manera d'acompanyar-te</h2>
     </div>
     <div class="val-grid">
-      <div class="val-card reveal"><div class="vic"><svg viewBox="0 0 24 24"><path d="M12 21C7 17 4 13 4 9a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 4-3 8-8 12Z"/></svg></div><h3 data-i18n="val1_t">La nostra motivació</h3><p data-i18n="val1_p">Volem acompanyar-te en el teu camí cap a una vida més sana i plena. A cada classe hi posem cura, energia i les eines perquè et sentis forta i millor amb tu mateixa.</p></div>
+      <div class="val-card reveal"><div class="vic"><svg viewBox="0 0 24 24"><path d="M12 21C7 17 4 13 4 9a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 4-3 8-8 12Z"/></svg></div><h3 data-i18n="val1_t">La nostra motivació</h3><p data-i18n="val1_p">Volem acompanyar-te en el teu camí cap a una vida més sana i plena. A cada classe hi posem cura, energia i les eines per ajudar-te a sentir-te millor cada dia.</p></div>
       <div class="val-card reveal"><div class="vic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg></div><h3 data-i18n="val2_t">La nostra missió</h3><p data-i18n="val2_p">Ajudar-te a descobrir la millor versió de tu a través del Pilates, en un espai proper on créixer, connectar amb el teu cos i guanyar confiança.</p></div>
       <div class="val-card reveal"><div class="vic"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg></div><h3 data-i18n="val3_t">El nostre projecte</h3><p data-i18n="val3_p">Un centre petit i acollidor on el Pilates es viu de prop: grups reduïts, atenció personalitzada i una comunitat que cuida.</p></div>
       <div class="val-card reveal"><div class="vic"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 15.8 7 18l1-5.5-4-3.9L9.5 8Z"/></svg></div><h3 data-i18n="val4_t">Els nostres valors</h3><p data-i18n="val4_p">Salut, empatia i compromís de veritat amb tu. Un tracte humà i proper, i un acompanyament honest a cada pas.</p></div>
@@ -483,7 +487,7 @@
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow" data-i18n="rev_eyebrow">El centre</span>
-      <h2 data-i18n="rev_title">El que diuen les nostres alumnes</h2>
+      <h2 data-i18n="rev_title">El que diu la nostra comunitat</h2>
       <p data-i18n="rev_sub">Gran experiència en el sector i formació especialitzada en el mètode Pilates.</p>
       <div class="g-badge"><svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1A11 11 0 0 0 2.18 7.06l3.66 2.84C6.71 7.3 9.14 5.38 12 5.38z"/></svg><span data-i18n="rev_google">Ressenyes de Google</span> <span class="gstars">★★★★★</span></div>
     </div>
@@ -563,6 +567,7 @@
         Body Pilates
       </div>
       <div class="foot-social">
+        <a href="tel:+34649819209" class="call" aria-label="Trucar"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1L6.6 10.8Z"/></svg></a>
         <a href="https://www.instagram.com/body_pilates22/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3 0 4.1.1 1 .1 1.7.2 2.3.5.6.2 1.1.5 1.6 1 .5.5.8 1 1 1.6.3.6.4 1.3.5 2.3.1 1.1.1 1.4.1 4.1s0 3-.1 4.1c-.1 1-.2 1.7-.5 2.3a4.4 4.4 0 0 1-1 1.6 4.4 4.4 0 0 1-1.6 1c-.6.3-1.3.4-2.3.5-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-1-.1-1.7-.2-2.3-.5a4.4 4.4 0 0 1-1.6-1 4.4 4.4 0 0 1-1-1.6c-.3-.6-.4-1.3-.5-2.3C2 15 2 14.7 2 12s0-3 .1-4.1c.1-1 .2-1.7.5-2.3.2-.6.5-1.1 1-1.6.5-.5 1-.8 1.6-1 .6-.3 1.3-.4 2.3-.5C9 2 9.3 2 12 2Zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4ZM17.4 6.6a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4Z"/></svg></a>
         <a href="https://wa.me/34649819209" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2Zm5.6 14.3c-.2.6-1.2 1.2-1.7 1.2-.4 0-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1-1.4-1-2.6 0-1.2.6-1.8.9-2 .2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6c-.2.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.2.1.4.1.5-.1l.7-.9c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.2.1.7-.2 1.3Z"/></svg></a>
       </div>
@@ -591,13 +596,13 @@ var I18N = {
   es:{
     meta_desc:"Conecta el cuerpo, la respiración y la mente. Centro de Pilates en Olot con sesiones individuales y grupales y formación de instructores.",
     nav_home:"Inicio",nav_about:"Quiénes somos",nav_services:"Servicios",nav_training:"Formaciones",nav_center:"Estudio de Pilates",nav_contact:"Contacto",nav_cta:"Reserva",
-    hero_eyebrow:"Centro de Pilates · Olot",
+    hero_eyebrow:"Estudio de Pilates · Olot",
     hero_title:"Conecta el cuerpo,<br>la respiración y la mente",
     hero_lead:"Una experiencia completa y transformadora para mejorar tu salud física y mental, adaptada a ti.",
     hero_cta1:"Descubre los servicios",hero_cta2:"Reserva una clase",scroll:"Descubre",
-    intro_eyebrow:"Bienvenida a Body Pilates",
+    intro_eyebrow:"Te damos la bienvenida",
     intro_badge_t:"Certificada PEAK Pilates",intro_badge_s:"Especializada en Pilates Evidence",
-    intro_title:"Un espacio donde crecer, conectar y sentirte fuerte",
+    intro_title:"Un espacio donde crecer, conectar y sentirte bien",
     intro_p1:"En Body Pilates nos dedicamos a ofrecerte una experiencia completa y transformadora para mejorar tu salud física y mental. Nuestros servicios se adaptan a las necesidades de cada persona, desde principiantes hasta practicantes avanzados.",
     intro_p2:"Creemos firmemente en el poder del Pilates para transformar el cuerpo y la mente. En cada clase te damos el apoyo, la inspiración y las herramientas que necesitas para alcanzar tus objetivos de bienestar.",
     intro_cta:"Conoce nuestra historia",
@@ -643,11 +648,11 @@ var I18N = {
     tr_d4:"Incluye",tr_d4v:"Manual, prácticas, examen y certificado",
     tr_cta_btn:"Infórmate e inscríbete",
     val_eyebrow:"Qué nos diferencia",val_title:"Nuestra manera de acompañarte",
-    val1_t:"Nuestra motivación",val1_p:"Queremos acompañarte en tu camino hacia una vida más sana y plena. En cada clase ponemos cuidado, energía y las herramientas para que te sientas fuerte y mejor contigo misma.",
+    val1_t:"Nuestra motivación",val1_p:"Queremos acompañarte en tu camino hacia una vida más sana y plena. En cada clase ponemos cuidado, energía y las herramientas para ayudarte a sentirte mejor cada día.",
     val2_t:"Nuestra misión",val2_p:"Ayudarte a descubrir la mejor versión de ti a través del Pilates, en un espacio cercano donde crecer, conectar con tu cuerpo y ganar confianza.",
     val3_t:"Nuestro proyecto",val3_p:"Un centro pequeño y acogedor donde el Pilates se vive de cerca: grupos reducidos, atención personalizada y una comunidad que cuida.",
     val4_t:"Nuestros valores",val4_p:"Salud, empatía y compromiso de verdad contigo. Un trato humano y cercano, y un acompañamiento honesto en cada paso.",
-    rev_eyebrow:"El centro",rev_title:"Lo que dicen nuestras alumnas",
+    rev_eyebrow:"El centro",rev_title:"Lo que dice nuestra comunidad",
     rev_sub:"Gran experiencia en el sector y formación especializada en el método Pilates.",
     rev_google:"Reseñas de Google",
     con_eyebrow:"Contacto",con_title:"Empecemos tu viaje hacia el bienestar",
