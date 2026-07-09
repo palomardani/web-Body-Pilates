@@ -8,6 +8,7 @@
 <meta property="og:title" content="Body Pilates Studio | Centre de Pilates a Olot" />
 <meta property="og:description" content="Connecta el cos, la respiració i la ment." />
 <meta property="og:type" content="website" />
+<link rel="icon" href="img/logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -27,7 +28,7 @@
   p{text-wrap:pretty}
   .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 24px}
   .eyebrow{font-size:.78rem;letter-spacing:.28em;text-transform:uppercase;color:var(--green-500);font-weight:600;margin-bottom:16px;display:inline-block}
-  .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:999px;font-weight:500;font-size:.95rem;transition:.25s ease;cursor:pointer;border:1.5px solid transparent;letter-spacing:.02em}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 26px;border-radius:999px;font-weight:500;font-size:.95rem;transition:.25s ease;cursor:pointer;border:1.5px solid transparent;letter-spacing:.02em}
   .btn-primary{background:var(--green-600);color:#fff}
   .btn-primary:hover{background:var(--green-700);transform:translateY(-2px);box-shadow:var(--shadow-sm)}
   .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
@@ -37,8 +38,9 @@
   .btn-outline{background:transparent;color:var(--green-700);border-color:rgba(31,74,46,.4)}
   .btn-outline:hover{background:rgba(31,74,46,.06)}
 
-  header.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:.35s ease;padding:16px 0;background:rgba(246,244,236,.95);backdrop-filter:blur(10px);box-shadow:0 6px 24px -20px rgba(0,0,0,.45)}
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:transform .35s ease,background .35s ease,padding .35s ease,box-shadow .35s ease;padding:16px 0;background:rgba(246,244,236,.95);backdrop-filter:blur(10px);box-shadow:0 6px 24px -20px rgba(0,0,0,.45)}
   header.nav.scrolled{padding:11px 0;box-shadow:0 6px 24px -16px rgba(0,0,0,.5)}
+  header.nav.nav-hidden{transform:translateY(-100%)}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
   .brand{display:flex;align-items:center;gap:12px;font-family:'Fraunces',serif;font-weight:600;font-size:1.25rem;letter-spacing:.02em;color:var(--navy)}
   .brand .logo{height:44px;width:auto;flex:none}
@@ -253,6 +255,30 @@
     .wrap{padding:0 18px}
     .hero .cta-row{flex-direction:column;align-items:stretch}
   }
+
+  /* Polit mobile: centrat del contingut */
+  @media(max-width:760px){
+    header.nav{padding:10px 0}
+    header.nav.scrolled{padding:8px 0}
+    .brand .logo{height:40px}
+    .intro .grid>div,.about .grid>div{text-align:center}
+    .intro .badge{text-align:left}
+    .ben-card{text-align:center}
+    .ben-card .ic{margin-left:auto;margin-right:auto}
+    .svc-card .body{text-align:center;align-items:center}
+    .val-card{text-align:center}
+    .val-card .vic{margin-left:auto;margin-right:auto}
+    .about .cert{text-align:left}
+    .tr-top>div{text-align:center}
+    .tr-feat{text-align:center}
+    .tr-cta{text-align:center}
+    .tr-cta dl{display:inline-grid;text-align:left}
+    .tr-panel h4{text-align:center}
+    .contact .section-head{text-align:center}
+    .info-item{justify-content:center}
+    .foot-grid{justify-content:center;text-align:center}
+    .foot-bottom{justify-content:center;text-align:center}
+  }
 </style>
 </head>
 <body>
@@ -260,8 +286,7 @@
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
     <a href="#hero" class="brand">
-      <img src="img/logo.png" alt="Body Pilates" class="logo-img" style="height:48px;width:auto;flex:none" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
-      <svg class="logo" style="display:none" viewBox="0 0 102 200" fill="none" xmlns="http://www.w3.org/2000/svg"><g fill="#5aa02b"><circle cx="55" cy="6" r="8.7"/><circle cx="42.3" cy="20" r="6.4"/><circle cx="34.2" cy="38" r="5"/><circle cx="31.9" cy="54" r="3.8"/><circle cx="31.9" cy="65" r="2.7"/><path d="M30 92C14 104 4 126 12 151 20 133 26 114 30 92Z"/></g><path d="M92.6 4C85 12 80 15 77.9 18.8 70 32 66 38 65.8 45.6 63 60 62 70 61.7 81.9 60 98 58 108 55.7 115.4 52 132 50 142 45.6 148.9 40 162 35 170 29.5 175.8 20 186 12 193 4 196.6" stroke="var(--navy)" stroke-width="12" stroke-linecap="round"/></svg>
+      <img src="img/logo.png" alt="Body Pilates" class="logo" style="height:48px;width:auto;flex:none" />
       <span>BODY PILATES<small>Olot · Studio</small></span>
     </a>
     <nav class="links" id="menu">
@@ -648,10 +673,19 @@ var savedLang='ca'; try{ savedLang = localStorage.getItem('bp_lang')||'ca'; }cat
 setLang(savedLang);
 
 var nav = document.getElementById('nav');
-window.addEventListener('scroll',function(){ nav.classList.toggle('scrolled', window.scrollY>60); });
+var lastY = window.scrollY;
+window.addEventListener('scroll',function(){
+  var y = window.scrollY;
+  nav.classList.toggle('scrolled', y>60);
+  var menuEl = document.getElementById('menu');
+  var menuOpen = menuEl && menuEl.classList.contains('open');
+  if(y > lastY && y > 220 && !menuOpen){ nav.classList.add('nav-hidden'); }
+  else { nav.classList.remove('nav-hidden'); }
+  lastY = y;
+});
 
 var burger=document.getElementById('burger'), menu=document.getElementById('menu');
-burger.addEventListener('click',function(){ menu.classList.toggle('open'); burger.classList.toggle('open'); });
+burger.addEventListener('click',function(){ menu.classList.toggle('open'); burger.classList.toggle('open'); nav.classList.remove('nav-hidden'); });
 menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ menu.classList.remove('open'); burger.classList.remove('open'); }); });
 
 var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); },{threshold:.12});
