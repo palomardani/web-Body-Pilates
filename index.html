@@ -202,7 +202,8 @@
   footer.site{background:var(--green-900);color:rgba(255,255,255,.75);padding:50px 0 30px;border-top:1px solid rgba(255,255,255,.1)}
   .foot-grid{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.1)}
   .foot-brand{display:flex;align-items:center;gap:12px;color:#fff;font-family:'Fraunces';font-size:1.2rem;font-weight:600}
-  .foot-brand .logo{height:38px;width:auto}
+  .foot-brand .foot-logo{background:#fff;border-radius:10px;padding:5px 8px;display:inline-flex;align-items:center}
+  .foot-brand .foot-logo img{height:34px;width:auto;display:block}
   .foot-social{display:flex;gap:12px}
   .foot-social a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;transition:.25s}
   .foot-social a:hover{background:var(--lime);border-color:var(--lime)}
@@ -528,8 +529,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img src="img/logo-blanc.png" alt="Body Pilates" class="logo-img" style="height:40px;width:auto" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
-        <svg class="logo" style="display:none" viewBox="0 0 102 200" fill="none" xmlns="http://www.w3.org/2000/svg"><g fill="#5aa02b"><circle cx="55" cy="6" r="8.7"/><circle cx="42.3" cy="20" r="6.4"/><circle cx="34.2" cy="38" r="5"/><circle cx="31.9" cy="54" r="3.8"/><circle cx="31.9" cy="65" r="2.7"/><path d="M30 92C14 104 4 126 12 151 20 133 26 114 30 92Z"/></g><path d="M92.6 4C85 12 80 15 77.9 18.8 70 32 66 38 65.8 45.6 63 60 62 70 61.7 81.9 60 98 58 108 55.7 115.4 52 132 50 142 45.6 148.9 40 162 35 170 29.5 175.8 20 186 12 193 4 196.6" stroke="#fff" stroke-width="12" stroke-linecap="round"/></svg>
+        <span class="foot-logo"><img src="img/logo.png" alt="Body Pilates" /></span>
         Body Pilates
       </div>
       <div class="foot-social">
