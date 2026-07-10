@@ -275,6 +275,15 @@
     .hero .cta-row{flex-direction:column;align-items:stretch}
   }
 
+  .faq{background:var(--white)}
+  .faq-list{max-width:760px;margin:44px auto 0;display:flex;flex-direction:column;gap:12px}
+  .faq-item{background:var(--cream);border:1px solid rgba(31,74,46,.1);border-radius:14px;overflow:hidden;transition:.25s}
+  .faq-item[open]{box-shadow:var(--shadow-sm)}
+  .faq-item summary{list-style:none;cursor:pointer;padding:20px 24px;font-family:'Fraunces',serif;font-weight:500;font-size:1.08rem;color:var(--green-700);display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::after{content:"+";font-size:1.5rem;line-height:1;color:var(--green-600);transition:.25s;flex:none}
+  .faq-item[open] summary::after{transform:rotate(45deg)}
+  .faq-a{padding:0 24px 22px;color:#33352f;line-height:1.7}
   /* Contingut centrat (escriptori i mobil) */
   .ben-card{text-align:center}
   .ben-card .ic{margin-left:auto;margin-right:auto}
@@ -431,7 +440,7 @@
         <div class="ph"><img src="img/grups.jpg" alt="Sessió grupal"></div>
         <div class="body">
           <h3 data-i18n="svc2_t">Sessions grupals</h3>
-          <p data-i18n="svc2_p">Una experiència divertida i motivadora en comunitat. Classes dinàmiques de força, flexibilitat i equilibri, per a tots els nivells, en un espai inclusiu i acollidor.</p>
+          <p data-i18n="svc2_p">Una experiència divertida i motivadora en comunitat. Classes dinàmiques de força, flexibilitat i equilibri, per a tots els nivells, en un espai inclusiu i acollidor. <strong>Màxim 4 persones · places limitades.</strong></p>
           <a href="#contact" data-i18n="svc_link">Reserva la teva sessió</a>
         </div>
       </div>
@@ -553,13 +562,30 @@
   </div>
 </section>
 
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="faq_eyebrow">Preguntes freqüents</span>
+      <h2 data-i18n="faq_title">Resolem els teus dubtes</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item"><summary data-i18n="faq_q1">Puc comen&ccedil;ar si no he fet mai Pilates?</summary><div class="faq-a" data-i18n="faq_a1">&Eacute;s clar. Adaptem cada sessi&oacute; al teu nivell, comencis de zero o ja en tinguis experi&egrave;ncia.</div></details>
+      <details class="faq-item"><summary data-i18n="faq_q2">Tinc dolor d'esquena o una lesi&oacute;, puc fer-ne?</summary><div class="faq-a" data-i18n="faq_a2">S&iacute;. Treballem de manera segura i personalitzada; estem especialitzats en patologies d'esquena aplicades al Pilates. Explica'ns el teu cas.</div></details>
+      <details class="faq-item"><summary data-i18n="faq_q3">&Eacute;s per a homes i dones?</summary><div class="faq-a" data-i18n="faq_a3">Per a tothom, a qualsevol edat i condici&oacute; f&iacute;sica.</div></details>
+      <details class="faq-item"><summary data-i18n="faq_q4">Les sessions s&oacute;n individuals o en grup?</summary><div class="faq-a" data-i18n="faq_a4">Com prefereixis: sessions individuals o en grups redu&iuml;ts de m&agrave;xim 4 persones.</div></details>
+      <details class="faq-item"><summary data-i18n="faq_q5">Qu&egrave; necessito portar?</summary><div class="faq-a" data-i18n="faq_a5">Roba c&ograve;moda i, si en tens, mitjons antilliscants. La resta la posem nosaltres.</div></details>
+      <details class="faq-item"><summary data-i18n="faq_q6">Cada quant hauria de venir?</summary><div class="faq-a" data-i18n="faq_a6">El que millor et vagi; amb 1-2 sessions per setmana ja es noten resultats. T'ajudem a trobar el teu ritme.</div></details>
+    </div>
+  </div>
+</section>
+
 <section class="contact" id="contact">
   <div class="wrap grid">
     <div class="reveal">
       <div class="section-head">
         <span class="eyebrow" style="color:var(--lime)" data-i18n="con_eyebrow">Contacte</span>
         <h2 data-i18n="con_title">Comencem el teu viatge cap al benestar</h2>
-        <p data-i18n="con_sub">Vols saber més, reservar una classe o simplement connectar? Escriu-nos i et respondrem ben aviat.</p>
+        <p data-i18n="con_sub">Vols saber més, reservar una classe o simplement connectar? Escriu-nos i et respondrem ben aviat. Les places són limitades per mantenir la qualitat.</p>
       </div>
       <div class="info-item">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
@@ -658,7 +684,7 @@ var I18N = {
     svc_eyebrow:"Nuestros servicios",svc_title:"Elige cómo quieres entrenar",
     svc_sub:"Sesiones diseñadas para adaptarse a tus objetivos y a tu ritmo.",
     svc1_t:"Sesiones individuales",svc1_p:"Una experiencia 100% personalizada. Diseñamos un plan a medida para tus objetivos: fuerza, flexibilidad, gestión del dolor o postura, con horarios flexibles.",
-    svc2_t:"Sesiones grupales",svc2_p:"Una experiencia divertida y motivadora en comunidad. Clases dinámicas de fuerza, flexibilidad y equilibrio, para todos los niveles, en un espacio inclusivo y acogedor.",
+    svc2_t:"Sesiones grupales",svc2_p:"Una experiencia divertida y motivadora en comunidad. Clases dinámicas de fuerza, flexibilidad y equilibrio, para todos los niveles, en un espacio inclusivo y acogedor. <strong>Máximo 4 personas · plazas limitadas.</strong>",
     svc_link:"Reserva tu sesión",
     about_eyebrow:"Quiénes somos",about_title:"Felicia Mirela Braguta",about_role:"Founder &amp; Lead Instructor",
     about_p1:"Tras varios años sintiéndome desconectada y sin rumbo, encontré mi verdadera pasión en el Pilates. Una disciplina que no solo transformó mi bienestar físico, sino también mi equilibrio emocional y mental.",
@@ -693,9 +719,16 @@ var I18N = {
     val4_t:"Nuestros valores",val4_p:"Salud, empatía y compromiso de verdad contigo. Un trato humano y cercano, y un acompañamiento honesto en cada paso.",
     rev_eyebrow:"Opiniones",rev_title:"Lo que dice nuestra comunidad",
     rev_sub:"Gran experiencia en el sector y formación especializada en el método Pilates.",
+    faq_eyebrow:"Preguntas frecuentes",faq_title:"Resolvemos tus dudas",
+    faq_q1:"&iquest;Puedo empezar si no he hecho nunca Pilates?",faq_a1:"Claro. Adaptamos cada sesi&oacute;n a tu nivel, empieces de cero o ya tengas experiencia.",
+    faq_q2:"Tengo dolor de espalda o una lesi&oacute;n, &iquest;puedo hacerlo?",faq_a2:"S&iacute;. Trabajamos de forma segura y personalizada; estamos especializados en patolog&iacute;as de espalda aplicadas al Pilates. Cu&eacute;ntanos tu caso.",
+    faq_q3:"&iquest;Es para hombres y mujeres?",faq_a3:"Para todo el mundo, a cualquier edad y condici&oacute;n f&iacute;sica.",
+    faq_q4:"&iquest;Las sesiones son individuales o en grupo?",faq_a4:"Como prefieras: sesiones individuales o en grupos reducidos de m&aacute;ximo 4 personas.",
+    faq_q5:"&iquest;Qu&eacute; necesito traer?",faq_a5:"Ropa c&oacute;moda y, si tienes, calcetines antideslizantes. El resto lo ponemos nosotros.",
+    faq_q6:"&iquest;Cada cu&aacute;nto deber&iacute;a venir?",faq_a6:"Lo que mejor te vaya; con 1-2 sesiones por semana ya se notan resultados. Te ayudamos a encontrar tu ritmo.",
     rev_google:"Reseñas de Google",
     con_eyebrow:"Contacto",con_title:"Empecemos tu viaje hacia el bienestar",
-    con_sub:"¿Quieres saber más, reservar una clase o simplemente conectar? Escríbenos y te responderemos muy pronto.",
+    con_sub:"¿Quieres saber más, reservar una clase o simplemente conectar? Escríbenos y te responderemos muy pronto. Las plazas son limitadas para mantener la calidad.",
     con_addr_l:"Dirección",con_phone_l:"Teléfono",con_email_l:"Correo",
     map_hold:"El mapa de Google Maps se carga solo si aceptas las cookies de terceros.",map_btn:"Mostrar el mapa",
     form_name:"Nombre",form_phone:"Teléfono",form_msg:"Mensaje",form_send:"Envía el mensaje",form_wa:"O escríbenos por WhatsApp",
