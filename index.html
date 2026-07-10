@@ -762,13 +762,14 @@ document.addEventListener('click',function(e){
 var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 
+window.loadGA=function(){ if(window.__ga)return; window.__ga=1; var GA='G-5GNGKZCEB3'; var s=document.createElement('script'); s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id='+GA; document.head.appendChild(s); window.dataLayer=window.dataLayer||[]; window.gtag=function(){dataLayer.push(arguments);}; gtag('js',new Date()); gtag('config',GA); };
 (function(){
   var bar=document.getElementById('cookieBar'), wrap=document.getElementById('mapWrap');
   function loadMap(){ if(!wrap) return; var f=document.getElementById('mapFrame'); if(f && !f.src && f.dataset.src){ f.src=f.dataset.src; } wrap.classList.add('loaded'); }
   var c=null; try{ c=localStorage.getItem('bp_consent'); }catch(e){}
-  if(c==='all'){ loadMap(); } else if(!c){ if(bar) bar.classList.add('show'); }
+  if(c==='all'){ loadMap(); window.loadGA(); } else if(!c){ if(bar) bar.classList.add('show'); }
   var A=document.getElementById('ckAccept'), R=document.getElementById('ckReject'), M=document.getElementById('mapLoad');
-  A&&A.addEventListener('click',function(){ try{localStorage.setItem('bp_consent','all');}catch(e){} bar.classList.remove('show'); loadMap(); });
+  A&&A.addEventListener('click',function(){ try{localStorage.setItem('bp_consent','all');}catch(e){} bar.classList.remove('show'); loadMap(); window.loadGA(); });
   R&&R.addEventListener('click',function(){ try{localStorage.setItem('bp_consent','necessary');}catch(e){} bar.classList.remove('show'); });
   M&&M.addEventListener('click',loadMap);
 })();
