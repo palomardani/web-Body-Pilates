@@ -826,6 +826,7 @@ document.addEventListener('click',function(e){
   }
 });
 
+if(/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent)){ document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function(a){ a.href=a.href.replace('https://wa.me/','whatsapp://send?phone='); }); }
 var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 
