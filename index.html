@@ -69,6 +69,9 @@
   .lang button{background:transparent;border:none;color:var(--muted);padding:6px 13px;cursor:pointer;font-family:inherit;letter-spacing:.05em;transition:.2s}
   .lang button.active{background:var(--lime);color:var(--green-900)}
   .nav-cta{display:inline-flex}
+  .alumni-d{font-size:.82rem;font-weight:500;color:var(--green-700);white-space:nowrap;transition:.2s}
+  .alumni-d:hover{color:var(--green-600)}
+  .alumni-m{display:none}
   .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
   .burger span{width:26px;height:2px;background:var(--green-700);transition:.3s}
 
@@ -255,11 +258,13 @@
     .val-grid{grid-template-columns:1fr}
   }
   @media(max-width:760px){
-    nav.links{position:fixed;inset:0 0 0 auto;width:min(78vw,320px);background:var(--green-800);flex-direction:column;justify-content:center;align-items:flex-start;padding:40px;gap:24px;transform:translateX(105%);transition:.35s;box-shadow:-20px 0 60px -20px rgba(0,0,0,.5);overflow-y:auto}
+    nav.links{position:fixed;inset:0 0 0 auto;width:min(78vw,320px);background:var(--green-800);flex-direction:column;justify-content:center;align-items:flex-end;text-align:right;padding:40px;gap:24px;transform:translateX(105%);transition:.35s;box-shadow:-20px 0 60px -20px rgba(0,0,0,.5);overflow-y:auto}
     nav.links.open{transform:none}
     nav.links a{color:#fff !important;font-size:1.1rem}
     .burger{display:flex;z-index:110}
     .nav-cta{display:none}
+    .alumni-d{display:none}
+    .alumni-m{display:block;margin-top:6px;padding-top:18px;border-top:1px solid rgba(255,255,255,.18);font-size:.98rem}
     .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
     .burger.open span:nth-child(2){opacity:0}
     .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
@@ -361,8 +366,10 @@
       <a href="#about" data-i18n="nav_about">Qui som</a>
       <a href="#training" data-i18n="nav_training">Formacions</a>
       <a href="#contact" data-i18n="nav_contact">Contacte</a>
+      <a href="https://body-pilates-app.pages.dev/" target="_blank" rel="noopener" class="alumni-m" data-i18n="nav_alumni">Acc&eacute;s alumnes</a>
     </nav>
     <div class="nav-right">
+      <a href="https://body-pilates-app.pages.dev/" target="_blank" rel="noopener" class="alumni-d" data-i18n="nav_alumni">Acc&eacute;s alumnes</a>
       <div class="lang" id="lang">
         <button data-lang="ca" class="active">CAT</button>
         <button data-lang="es">ES</button>
@@ -575,14 +582,14 @@
     <div class="conv-card reveal">
       <span class="eyebrow" style="color:var(--green-600)" data-i18n="conv_eyebrow">Tot m&eacute;s f&agrave;cil</span>
       <h2 data-i18n="conv_title">Gestiona les teves classes des del m&ograve;bil</h2>
-      <p data-i18n="conv_sub">Organitza el teu Pilates quan vulguis, sense trucades ni esperes.</p>
+      <p data-i18n="conv_sub">Organitza les teves classes quan et vagi b&eacute;, sense missatges ni esperes.</p>
       <ul class="conv-list">
         <li data-i18n="conv_l1">Consulta els teus horaris</li>
-        <li data-i18n="conv_l2">Reserva i recupera classes</li>
+        <li data-i18n="conv_l2">Reserva i recupera classes en segons</li>
         <li data-i18n="conv_l3">Rep els avisos importants</li>
         <li data-i18n="conv_l4">Accedeix als teus documents</li>
       </ul>
-      <a class="btn btn-primary" href="https://body-pilates-app.pages.dev/" target="_blank" rel="noopener" data-i18n="conv_btn">Accedir</a>
+      <a class="btn btn-primary" href="https://body-pilates-app.pages.dev/" target="_blank" rel="noopener" data-i18n="conv_btn">Acc&eacute;s alumnes</a>
     </div>
   </div>
 </section>
@@ -685,7 +692,7 @@
 var I18N = {
   es:{
     meta_desc:"Conecta el cuerpo, la respiración y la mente. Centro de Pilates en Olot con sesiones individuales y grupales y formación de instructores.",
-    nav_home:"Inicio",nav_about:"Quiénes somos",nav_services:"Servicios",nav_training:"Formaciones",nav_center:"Opiniones",nav_contact:"Contacto",nav_cta:"Reserva",
+    nav_home:"Inicio",nav_about:"Quiénes somos",nav_services:"Servicios",nav_training:"Formaciones",nav_center:"Opiniones",nav_contact:"Contacto",nav_cta:"Reserva",nav_alumni:"Acceso alumnos",
     hero_eyebrow:"El método Pilates · Olot",
     hero_title:"Conecta el cuerpo,<br>la respiración y la mente",
     hero_lead:"Una experiencia completa y transformadora para mejorar tu salud física y mental, adaptada a ti.",
@@ -751,8 +758,8 @@ var I18N = {
     faq_q4:"&iquest;Las sesiones son individuales o en grupo?",faq_a4:"Como prefieras: sesiones individuales o en grupos reducidos de m&aacute;ximo 4 personas.",
     faq_q5:"&iquest;Qu&eacute; necesito traer?",faq_a5:"Ropa c&oacute;moda y, si tienes, calcetines antideslizantes. El resto lo ponemos nosotros.",
     faq_q6:"&iquest;Cada cu&aacute;nto deber&iacute;a venir?",faq_a6:"Lo que mejor te vaya; con 1-2 sesiones por semana ya se notan resultados. Te ayudamos a encontrar tu ritmo.",
-    conv_eyebrow:"Todo m&aacute;s f&aacute;cil",conv_title:"Gestiona tus clases desde el m&oacute;vil",conv_sub:"Organiza tu Pilates cuando quieras, sin llamadas ni esperas.",
-    conv_l1:"Consulta tus horarios",conv_l2:"Reserva y recupera clases",conv_l3:"Recibe los avisos importantes",conv_l4:"Accede a tus documentos",conv_btn:"Acceder",
+    conv_eyebrow:"Todo m&aacute;s f&aacute;cil",conv_title:"Gestiona tus clases desde el m&oacute;vil",conv_sub:"Organiza tus clases cuando te vaya bien, sin mensajes ni esperas.",
+    conv_l1:"Consulta tus horarios",conv_l2:"Reserva y recupera clases en segundos",conv_l3:"Recibe los avisos importantes",conv_l4:"Accede a tus documentos",conv_btn:"Acceso alumnos",
     rev_google:"Reseñas de Google",
     con_eyebrow:"Contacto",con_title:"Empecemos tu viaje hacia el bienestar",
     con_sub:"¿Quieres saber más, reservar una clase o simplemente conectar? Escríbenos y te responderemos muy pronto. Las plazas son limitadas para mantener la calidad.",
