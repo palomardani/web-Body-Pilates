@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Body Pilates Studio | Pilates a Olot (Girona)</title>
+<link rel="preload" as="image" href="img/hero.jpg" fetchpriority="high" />
 <meta name="description" data-i18n="meta_desc" content="Estudi de Pilates a Olot (Girona) amb màquines: Reformer, Cadillac i Chair. Sessions individuals, grupals i formació d'instructors. Reserva la teva sessió." />
 <link rel="canonical" href="https://www.bodypilates.es/" />
 <meta name="robots" content="index, follow" />
@@ -868,7 +869,7 @@ document.querySelectorAll('.info-item').forEach(function(it){
   if(!slides) return;
   var dotsWrap=document.getElementById('revDots');
   var idx=0, timer;
-  for(var i=0;i<slides;i++){ (function(k){ var b=document.createElement('button'); b.addEventListener('click',function(){ go(k); reset(); }); dotsWrap.appendChild(b); })(i); }
+  for(var i=0;i<slides;i++){ (function(k){ var b=document.createElement('button'); b.setAttribute('aria-label','Ves a la ressenya '+(k+1)); b.addEventListener('click',function(){ go(k); reset(); }); dotsWrap.appendChild(b); })(i); }
   var dots=dotsWrap.children;
   function go(i){ idx=(i+slides)%slides; track.style.transform='translateX(-'+(idx*100)+'%)'; for(var d=0;d<dots.length;d++){ dots[d].classList.toggle('active',d===idx); } }
   function reset(){ clearInterval(timer); timer=setInterval(function(){ go(idx+1); },5500); }
