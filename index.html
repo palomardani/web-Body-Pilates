@@ -342,6 +342,21 @@
     .foot-grid{justify-content:center;text-align:center}
     .foot-bottom{flex-direction:column;justify-content:center;text-align:center;gap:8px;font-size:.78rem}
   }
+
+nav.links a{white-space:nowrap} .nav-right{flex-shrink:0}
+@media(min-width:1101px) and (max-width:1250px){nav.links{gap:18px}.nav-inner{gap:14px}}
+@media(min-width:761px) and (max-width:1100px){
+    nav.links{position:fixed;inset:0 0 0 auto;width:min(78vw,320px);background:var(--green-800);flex-direction:column;justify-content:center;align-items:flex-end;text-align:right;padding:40px;gap:24px;transform:translateX(105%);transition:.35s;box-shadow:-20px 0 60px -20px rgba(0,0,0,.5);overflow-y:auto}
+    nav.links.open{transform:none}
+    nav.links a{color:#fff !important;font-size:1.1rem}
+    .burger{display:flex;z-index:110}
+    .nav-cta{display:none}
+    .alumni-d{display:none}
+    .alumni-m{display:block;margin-top:6px;padding-top:18px;border-top:1px solid rgba(255,255,255,.18);font-size:.98rem}
+    .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .burger.open span:nth-child(2){opacity:0}
+    .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":["HealthClub","SportsActivityLocation"],
